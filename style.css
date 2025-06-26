@@ -227,3 +227,10 @@ footer .container .d-flex a i:hover {
     padding: 100px 50px;
 }
 }
+
+@media(max-width:500px)
+{
+    #projects {
+    padding: 100px 20px;
+}
+}
