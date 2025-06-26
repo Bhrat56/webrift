@@ -3,593 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - Full Stack Developers Portfolio</title>
-    <!-- Tailwind CSS CDN -->
+    <title>DevDuo | Full Stack Development Partners</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom CSS Variables for easier color management */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
         :root {
-            --primary-indigo: #4F46E5; /* Tailwind indigo-600 */
-            --secondary-purple: #8B5CF6; /* Tailwind violet-500 */
-            --accent-pink: #EC4899; /* Tailwind pink-500 (not heavily used, but available) */
-            --text-dark: #1F2937; /* Dark gray for main text */
-            --text-light: #4B5563; /* Lighter gray for secondary text */
-            --bg-light: #F9FAFB; /* Very light gray for backgrounds */
-            --bg-dark: #111827; /* Dark background for footer */
+            --primary-dark: #0f172a;
+            --primary-light: #f8fafc;
+            --accent-gold: #d4af37;
+            --accent-purple: #6d28d9;
         }
 
-        /* Base styles */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-        }
-        /* Consistent padding for sections */
-        .section-padding {
-            padding: 6rem 1.5rem; /* Increased vertical padding for more breathing room */
-            max-width: 1200px;
-            margin: 0 auto;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--primary-light);
+            overflow-x: hidden;
         }
 
-        /* Navigation Links Styling */
-        .navbar-link {
-            transition: color 0.3s ease, transform 0.2s ease;
-            position: relative; /* Needed for the underline animation */
-        }
-        /* Underline effect on hover for nav links */
-        .navbar-link::after {
-            content: '';
-            position: absolute;
-            width: 0; /* Starts hidden */
-            height: 2px;
-            bottom: -4px;
-            left: 50%; /* Center the underline */
-            transform: translateX(-50%);
-            background-color: var(--primary-indigo);
-            transition: width 0.3s ease; /* Animate width */
-        }
-        .navbar-link:hover::after {
-            width: 100%; /* Expands to full width on hover */
-        }
-        .navbar-link:hover {
-            color: var(--primary-indigo); /* Change text color on hover */
-            transform: translateY(-2px); /* Slight lift on hover */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
         }
 
-        /* Primary Button Styling with Gradient and Ripple Effect */
-        .btn-primary {
-            background-image: linear-gradient(to right, #6366f1, var(--primary-indigo), var(--secondary-purple)); /* Smooth gradient background */
-            color: white;
-            padding: 1rem 2.5rem; /* Generous padding */
-            border-radius: 9999px; /* Fully rounded (pill shape) */
-            transition: all 0.4s ease; /* Smooth transitions for all properties */
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4); /* Soft shadow */
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em; /* Subtle letter spacing */
-            position: relative; /* For ripple effect */
-            overflow: hidden; /* Hide overflowing ripple */
-            cursor: pointer; /* Indicate clickability */
-        }
-        .btn-primary:hover {
-            transform: translateY(-5px) scale(1.03); /* More pronounced lift and slight scale on hover */
-            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.6); /* Larger, more prominent shadow on hover */
-        }
-        /* Ripple effect pseudo-element */
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: rgba(255, 255, 255, 0.15); /* Light ripple color */
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0); /* Start scaled down and hidden */
-            opacity: 0;
-            transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Animation for ripple */
-        }
-        .btn-primary:active::before {
-            transform: translate(-50%, -50%) scale(1); /* Expand ripple on click */
-            opacity: 1;
-            transition: transform 0s, opacity 0s; /* Make active state immediate */
+        .gold-text {
+            color: var(--accent-gold);
         }
 
-        /* Card Styling for Services and Projects */
+        .purple-text {
+            color: var(--accent-purple);
+        }
+
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-overlay {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
         .card {
-            background-color: white;
-            border-radius: 1.25rem; /* Even more rounded corners for a modern feel */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, larger shadow */
-            padding: 2.5rem; /* Consistent internal padding */
-            margin-bottom: 2rem; /* Spacing between cards (if not using grid gap) */
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* Smooth transitions */
-            border: 1px solid #e2e8f0; /* Subtle border */
-            overflow: hidden; /* Ensures rounded corners on images within */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
+
         .card:hover {
-            transform: translateY(-8px); /* More significant lift on hover */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
-            border-color: var(--primary-indigo); /* Highlight border on hover */
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-gold);
         }
 
-        /* Skill Badge Styling */
-        .skill-badge {
-            background-color: var(--primary-indigo); /* Solid primary color background */
-            color: white;
-            padding: 0.5rem 1.2rem; /* Slightly larger padding for readability */
-            border-radius: 9999px; /* Fully rounded */
-            font-size: 0.95rem; /* Slightly larger font size */
-            font-weight: 600;
-            display: inline-block; /* Allows proper spacing and margin */
-            margin-right: 0.6rem;
-            margin-bottom: 0.6rem;
-            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3); /* Soft shadow */
-            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover */
-        }
-        .skill-badge:hover {
-            transform: translateY(-2px); /* Slight lift on hover */
-            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.5); /* More prominent shadow on hover */
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
         }
 
-        /* Project Image Styling */
-        .project-img {
-            object-fit: cover; /* Ensures image covers area without distortion */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            border-radius: 12px;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
             width: 100%;
-            height: 14rem; /* Consistent height for project images */
-            border-radius: 1rem 1rem 0 0; /* Only top corners rounded, more rounded */
+            background: rgba(15, 23, 42, 0.9);
+            transition: all 0.4s ease;
+            padding: 20px;
         }
 
-        /* Hero Section Title Gradient Text */
-        .hero-title {
-            background: linear-gradient(45deg, var(--secondary-purple), #c4b5fd); /* Gradient for text fill */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent; /* Fallback for non-webkit browsers */
-            line-height: 1.2; /* Improved line height */
+        .project-card:hover .project-overlay {
+            bottom: 0;
         }
 
-        /* Background Pattern Styling and Animation */
-        .bg-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239ca3af' fill-opacity='0.08'%3E%3Cpath d='M30 15V0H0v30h15v30h30V30h15V0H30zm0 1V29H1V1h28v14zm1 28v14h14V44H31zm14-14v14h14V44H45zm0-1V1h14v28H45z'/%3E%3C/g%3E%3C/svg%3E");
-            background-size: 80px 80px; /* Slightly larger pattern for better visual */
-            animation: backgroundPan 60s linear infinite; /* Smooth, slow panning animation */
-        }
-        /* Keyframes for background panning animation */
-        @keyframes backgroundPan {
-            from { background-position: 0 0; }
-            to { background-position: 600px 600px; } /* Moves the background over time */
+        .contact-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s;
         }
 
-        /* Scroll-Reveal Animations */
-        .animate-on-scroll {
-            opacity: 0; /* Start hidden */
-            transform: translateY(20px); /* Start slightly below final position */
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
-        }
-        .animate-on-scroll.is-visible {
-            opacity: 1; /* Fully visible */
-            transform: translateY(0); /* Move to final position */
+        .contact-input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
         }
 
-        /* Hero Section Specific Entry Animations (On Page Load) */
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.8); } /* Start smaller and hidden */
-            to { opacity: 1; transform: scale(1); } /* End fully visible and normal size */
-        }
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(50px); } /* Start hidden and below */
-            to { opacity: 1; transform: translateY(0); } /* End fully visible at final position */
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .animate-slide-in {
+            animation: slideIn 0.8s ease-out forwards;
         }
 
-        .hero-partner-img {
-            animation: fadeInScale 1s ease-out forwards; /* Apply animation */
-            animation-delay: 0.5s; /* Stagger delay for first partner image */
-            opacity: 0; /* Initial hidden state */
-        }
-        .hero-partner-img:last-child {
-            animation-delay: 0.7s; /* Stagger delay for second partner image */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero-title-animated {
-            animation: slideInUp 1s ease-out forwards;
-            animation-delay: 1s; /* Delay after partner images */
-            opacity: 0;
+        .delay-100 {
+            animation-delay: 0.1s;
         }
-        .hero-subtitle-animated {
-            animation: slideInUp 1s ease-out forwards;
-            animation-delay: 1.2s; /* Delay after title */
-            opacity: 0;
+
+        .delay-200 {
+            animation-delay: 0.2s;
         }
-        .hero-button-animated {
-            animation: fadeInScale 1s ease-out forwards;
-            animation-delay: 1.4s; /* Delay after subtitle */
-            opacity: 0;
+
+        .delay-300 {
+            animation-delay: 0.3s;
         }
-        /* Footer social link icons */
-        .footer-link-icon {
-            filter: grayscale(100%); /* Start in grayscale */
-            transition: filter 0.3s ease; /* Smooth transition to color */
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-        .footer-link-icon:hover {
-            filter: grayscale(0%); /* Full color on hover */
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-purple);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold);
         }
     </style>
 </head>
-<body class="scroll-smooth">
-
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-lg py-4 fixed w-full z-10">
-        <nav class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold text-gray-900 rounded-lg p-2 transition-colors duration-300 hover:text-indigo-700">DevPartners</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="navbar-link text-gray-700 font-medium text-lg rounded-lg p-2">About Us</a>
-                <a href="#services" class="navbar-link text-gray-700 font-medium text-lg rounded-lg p-2">Services</a>
-                <a href="#projects" class="navbar-link text-gray-700 font-medium text-lg rounded-lg p-2">Projects</a>
-                <a href="#contact" class="navbar-link text-gray-700 font-medium text-lg rounded-lg p-2">Contact</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg p-2 transition-colors duration-300">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-20 overflow-y-auto">
-            <div class="flex justify-end p-4">
-                <button id="close-mobile-menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg p-2 transition-colors duration-300">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-90 bg-primary-dark backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold gold-text">DevDuo</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-accent-gold transition">Home</a>
+                    <a href="#about" class="hover:text-accent-gold transition">About Us</a>
+                    <a href="#services" class="hover:text-accent-gold transition">Services</a>
+                    <a href="#projects" class="hover:text-accent-gold transition">Projects</a>
+                    <a href="#contact" class="hover:text-accent-gold transition">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <nav class="flex flex-col items-center space-y-6 py-8">
-                <a href="#about" class="text-xl text-gray-800 font-medium hover:text-indigo-600 rounded-lg p-3 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
-                <a href="#services" class="text-xl text-gray-800 font-medium hover:text-indigo-600 rounded-lg p-3 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
-                <a href="#projects" class="text-xl text-gray-800 font-medium hover:text-indigo-600 rounded-lg p-3 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Projects</a>
-                <a href="#contact" class="text-xl text-gray-800 font-medium hover:text-indigo-600 rounded-lg p-3 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
-            </nav>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-indigo-700 to-purple-600 text-white py-24 md:py-40 flex items-center justify-center min-h-screen-minus-header relative overflow-hidden bg-pattern">
-        <div class="text-center relative z-10 px-4 section-padding">
-            <div class="flex justify-center items-center space-x-6 mb-8">
-                <!-- Partner images with entrance animation -->
-                <img src="https://placehold.co/120x120/ffffff/4f46e5?text=Partner+1" alt="Partner 1" class="rounded-full w-28 h-28 md:w-36 md:h-36 mx-auto border-4 border-white shadow-xl object-cover hero-partner-img">
-                <img src="https://placehold.co/120x120/ffffff/4f46e5?text=Partner+2" alt="Partner 2" class="rounded-full w-28 h-28 md:w-36 md:h-36 mx-auto border-4 border-white shadow-xl object-cover hero-partner-img">
-            </div>
-            <!-- Animated Hero Title and Subtitle -->
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight hero-title hero-title-animated">Hi, We are DevPartners</h1>
-            <p class="text-xl md:text-2xl mb-10 font-light max-w-2xl mx-auto hero-subtitle-animated">Your dedicated team for crafting exceptional web experiences.</p>
-            <!-- Animated Call-to-Action Button -->
-            <a href="#contact" class="btn-primary text-lg md:text-xl font-semibold px-8 py-4 shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hero-button-animated">
-                Let's Start Your Project
-            </a>
-        </div>
-        <!-- Abstract background shapes for visual depth -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="w-64 h-64 bg-white rounded-full absolute -top-16 -left-16 blur-3xl"></div>
-            <div class="w-80 h-80 bg-indigo-300 rounded-full absolute -bottom-32 -right-32 blur-3xl"></div>
-            <div class="w-48 h-48 bg-purple-300 rounded-full absolute top-1/4 left-1/3 blur-3xl"></div>
-            <div class="w-56 h-56 bg-blue-300 rounded-full absolute bottom-1/4 right-1/4 blur-3xl"></div>
-        </div>
-    </section>
-
-    <!-- About Us Section with Scroll-Reveal -->
-    <section id="about" class="section-padding bg-white animate-on-scroll">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">About Us</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="flex justify-center">
-                <img src="https://placehold.co/500x350/a78bfa/ffffff?text=Our+Team" alt="Our Team" class="rounded-2xl shadow-2xl w-full max-w-md object-cover transition-transform duration-300 hover:scale-105">
-            </div>
-            <div>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    We are **DevPartners**, a passionate and dedicated team of full-stack developers committed to bringing your digital visions to life. With a combined experience of over [X+Y] years, we specialize in building robust, scalable, and intuitive web applications.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Our approach is rooted in meticulous planning, clean code, and a client-centric focus. We believe in understanding your unique needs to deliver tailor-made solutions that not only meet but exceed expectations. Your success is our dedication!
-                </p>
-                <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-800">Our Core Expertise</h3>
-                <div class="flex flex-wrap gap-x-2 gap-y-3">
-                    <span class="skill-badge">HTML5</span>
-                    <span class="skill-badge">CSS3</span>
-                    <span class="skill-badge">JavaScript (ES6+)</span>
-                    <span class="skill-badge">React.js</span>
-                    <span class="skill-badge">Next.js</span>
-                    <span class="skill-badge">Node.js</span>
-                    <span class="skill-badge">Express.js</span>
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">Django</span>
-                    <span class="skill-badge">Flask</span>
-                    <span class="skill-badge">MongoDB</span>
-                    <span class="skill-badge">PostgreSQL</span>
-                    <span class="skill-badge">Firebase</span>
-                    <span class="skill-badge">Docker</span>
-                    <span class="skill-badge">AWS Services</span>
-                    <span class="skill-badge">Git & GitHub</span>
-                    <span class="skill-badge">Responsive Design</span>
-                    <span class="skill-badge">API Development</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Provided Section with Scroll-Reveal -->
-    <section id="services" class="section-padding bg-gray-50 bg-pattern animate-on-scroll">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">Services We Provide</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Service Card 1 -->
-            <div class="card text-center animate-on-scroll">
-                <div class="text-indigo-600 mb-6">
-                    <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h4l2-2m-6-8l4-4m3.5 12l3.5 3.5l4-4-3.5-3.5M10.5 6L10 3L6 1L3 6l4 4L10.5 6z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Front-End Development</h3>
-                <p class="text-gray-600 text-base">Crafting responsive, user-friendly, and highly interactive interfaces using modern frameworks like React, Vue, and Next.js.</p>
-            </div>
-            <!-- Service Card 2 -->
-            <div class="card text-center animate-on-scroll">
-                <div class="text-indigo-600 mb-6">
-                    <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Back-End Development</h3>
-                <p class="text-gray-600 text-base">Building robust, scalable, and secure server-side applications with Node.js, Python (Django/Flask), and various databases.</p>
-            </div>
-            <!-- Service Card 3 -->
-            <div class="card text-center animate-on-scroll">
-                <div class="text-indigo-600 mb-6">
-                    <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Full Stack Solutions</h3>
-                <p class="text-gray-600 text-base">Delivering end-to-end web solutions, from database design and API development to intuitive user interfaces.</p>
-            </div>
-            <!-- Service Card 4 -->
-            <div class="card text-center animate-on-scroll">
-                <div class="text-indigo-600 mb-6">
-                    <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Database Design & Mgmt.</h3>
-                <p class="text-gray-600 text-base">Designing efficient database schemas and managing data with SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) solutions.</p>
-            </div>
-            <!-- Service Card 5 -->
-            <div class="card text-center animate-on-scroll">
-                <div class="text-indigo-600 mb-6">
-                    <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-semibold mb-3 text-gray-900">API Development</h3>
-                <p class="text-gray-600 text-base">Creating robust and secure RESTful APIs for seamless communication between front-end and back-end systems.</p>
-            </div>
-            <!-- Service Card 6 -->
-            <div class="card text-center animate-on-scroll">
-                <div class="text-indigo-600 mb-6">
-                    <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-semibold mb-3 text-gray-900">Consultation & Strategy</h3>
-                <p class="text-gray-600 text-base">Providing expert advice on technology stacks, project architecture, and development best practices to ensure success.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section with Scroll-Reveal -->
-    <section id="projects" class="section-padding bg-white animate-on-scroll">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">Our Featured Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Project Card 1 -->
-            <div class="card overflow-hidden group p-0 animate-on-scroll">
-                <img src="https://placehold.co/600x400/6366f1/ffffff?text=E-commerce" alt="E-commerce Platform" class="project-img transition-transform duration-300 group-hover:scale-105">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">E-commerce Platform</h3>
-                    <p class="text-gray-600 mb-4 text-sm">A full-featured e-commerce application with user auth, product management, and secure payment integration.</p>
-                    <div class="flex flex-wrap gap-1 mb-4">
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Node.js</span>
-                        <span class="skill-badge">MongoDB</span>
-                    </div>
-                    <a href="#" class="text-indigo-600 font-semibold hover:underline text-sm" target="_blank" rel="noopener noreferrer">View Project &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 2 -->
-            <div class="card overflow-hidden group p-0 animate-on-scroll">
-                <img src="https://placehold.co/600x400/4f46e5/ffffff?text=Chat+App" alt="Real-time Chat Application" class="project-img transition-transform duration-300 group-hover:scale-105">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Real-time Chat App</h3>
-                    <p class="text-gray-600 mb-4 text-sm">A real-time chat application with user rooms, message history, and online status, built with WebSockets.</p>
-                    <div class="flex flex-wrap gap-1 mb-4">
-                        <span class="skill-badge">Vue.js</span>
-                        <span class="skill-badge">Express.js</span>
-                        <span class="skill-badge">Socket.io</span>
-                    </div>
-                    <a href="#" class="text-indigo-600 font-semibold hover:underline text-sm" target="_blank" rel="noopener noreferrer">View Project &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 3 -->
-            <div class="card overflow-hidden group p-0 animate-on-scroll">
-                <img src="https://placehold.co/600x400/3730a3/ffffff?text=Task+Mgmt" alt="Task Management System" class="project-img transition-transform duration-300 group-hover:scale-105">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Task Management System</h3>
-                    <p class="text-gray-600 mb-4 text-sm">A project management tool allowing users to create, assign, and track tasks with deadline notifications.</p>
-                    <div class="flex flex-wrap gap-1 mb-4">
-                        <span class="skill-badge">Django</span>
-                        <span class="skill-badge">PostgreSQL</span>
-                        <span class="skill-badge">HTML/CSS</span>
-                    </div>
-                    <a href="#" class="text-indigo-600 font-semibold hover:underline text-sm" target="_blank" rel="noopener noreferrer">View Project &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 4 (New) -->
-            <div class="card overflow-hidden group p-0 animate-on-scroll">
-                <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Analytics+Dashboard" alt="Analytics Dashboard" class="project-img transition-transform duration-300 group-hover:scale-105">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Interactive Dashboard</h3>
-                    <p class="text-gray-600 mb-4 text-sm">A dynamic analytics dashboard with real-time data visualization and customizable reporting features.</p>
-                    <div class="flex flex-wrap gap-1 mb-4">
-                        <span class="skill-badge">Next.js</span>
-                        <span class="skill-badge">D3.js</span>
-                        <span class="skill-badge">Node.js</span>
-                    </div>
-                    <a href="#" class="text-indigo-600 font-semibold hover:underline text-sm" target="_blank" rel="noopener noreferrer">View Project &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section with Scroll-Reveal -->
-    <section id="contact" class="section-padding bg-gray-50 bg-pattern animate-on-scroll">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">Get in Touch</h2>
-        <div class="max-w-xl mx-auto card p-8 animate-on-scroll">
-            <p class="text-lg text-gray-700 text-center mb-8">
-                Ready to kickstart your next project or simply want to say hello? Reach out to us! We're always excited to discuss new opportunities.
-            </p>
-            <form class="space-y-6">
-                <div>
-                    <label for="name" class="block text-base font-medium text-gray-700 mb-2">Your Name</label>
-                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-200" placeholder="Your Name" required>
-                </div>
-                <div>
-                    <label for="email" class="block text-base font-medium text-gray-700 mb-2">Your Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-200" placeholder="your.email@example.com" required>
-                </div>
-                <div>
-                    <label for="message" class="block text-base font-medium text-gray-700 mb-2">Your Message</label>
-                    <textarea id="message" name="message" rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-200" placeholder="Tell us about your project or inquiry..." required></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn-primary font-semibold rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-0.5">
-                        Send Message
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="text-lg mb-4">&copy; 2024 DevPartners. All rights reserved.</p>
-            <div class="flex justify-center space-x-8 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="LinkedIn" class="w-6 h-6 inline-block footer-link-icon" />
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png" alt="GitHub" class="w-6 h-6 inline-block footer-link-icon" />
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/1200px-X_logo_2023.svg.png" alt="X (Twitter)" class="w-6 h-6 inline-block footer-link-icon" />
+    <section id="home" class="hero-section flex items-center justify-center relative">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-6 z-10">
+            <div class="max-w-2xl mx-auto text-center animate-slide-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    <span class="gold-text">DevDuo</span> - Full Stack Development Partners
+                </h1>
+                <p class="text-xl mb-8 opacity-90">We craft premium digital experiences with cutting-edge technology and meticulous attention to detail</p>
+                <a href="#contact" class="bg-accent-purple hover:bg-accent-gold text-white py-3 px-8 rounded-full font-medium transition-all duration-300 transform hover:scale-105 inline-block">
+                    Get in Touch
                 </a>
             </div>
-            <p class="text-gray-500 text-sm mt-6">Designed and developed with dedication by DevPartners.</p>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                // Adjust for sticky header by subtracting its height from the scroll target
-                const headerOffset = document.querySelector('header').offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset;
+    <!-- About Us Section -->
+    <section id="about" class="section bg-gradient-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gold-text animate-slide-in">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-slide-in delay-100">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Developers working" class="rounded-lg shadow-2xl w-full">
+                </div>
+                <div class="md:w-1/2 animate-slide-in delay-200">
+                    <h3 class="text-3xl font-bold mb-6">We Build Exceptional Digital Products</h3>
+                    <p class="mb-4 opacity-90">DevDuo is a passionate partnership between two full-stack developers dedicated to creating premium web applications. With a combined experience of over 12 years in the industry, we bring technical excellence and creative vision to every project.</p>
+                    <p class="mb-6 opacity-90">Our approach combines modern technologies with timeless design principles to deliver solutions that are both beautiful and performant.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-opacity-20 bg-white rounded-lg px-4 py-3">
+                            <span class="gold-text font-bold">12+</span> Years Experience
+                        </div>
+                        <div class="bg-opacity-20 bg-white rounded-lg px-4 py-3">
+                            <span class="gold-text font-bold">50+</span> Projects Completed
+                        </div>
+                        <div class="bg-opacity-20 bg-white rounded-lg px-4 py-3">
+                            <span class="gold-text font-bold">100%</span> Client Satisfaction
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gold-text">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card p-8 rounded-lg animate-slide-in">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Custom Web Development</h3>
+                    <p class="opacity-90">Tailored web applications built with the latest technologies including React, Node.js, and modern JavaScript frameworks.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="card p-8 rounded-lg animate-slide-in delay-100">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Responsive Design</h3>
+                    <p class="opacity-90">Beautiful interfaces that adapt perfectly to any device, ensuring optimal user experience across all platforms.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="card p-8 rounded-lg animate-slide-in delay-200">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Backend Solutions</h3>
+                    <p class="opacity-90">Robust server-side architectures with scalable APIs, databases, and cloud integrations for reliable performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                // Close mobile menu if it's open after clicking a link
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-gradient-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gold-text">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card animate-slide-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Project 1" class="w-full h-full object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 gold-text">Luxury Fashion E-Commerce</h3>
+                        <p class="mb-4 opacity-90">A high-end fashion platform with immersive 3D product visualization and AR try-on features.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card animate-slide-in delay-100">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Project 2" class="w-full h-full object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 gold-text">Financial Analytics Dashboard</h3>
+                        <p class="mb-4 opacity-90">A real-time financial data visualization platform for hedge fund managers with custom reporting tools.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">D3.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card animate-slide-in delay-200">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Project 3" class="w-full h-full object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 gold-text">Healthcare Management System</h3>
+                        <p class="mb-4 opacity-90">A HIPAA-compliant patient management system with telemedicine integration and AI-powered diagnostics.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">Angular</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">Java</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card animate-slide-in delay-300">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Project 4" class="w-full h-full object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-2 gold-text">Smart Home Automation</h3>
+                        <p class="mb-4 opacity-90">An IoT platform for controlling and monitoring smart home devices with voice assistant integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">AWS IoT</span>
+                            <span class="bg-accent-purple text-xs px-3 py-1 rounded-full">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Mobile menu toggle logic
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-
-        closeMobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-
-        // Intersection Observer for scroll-reveal animations
-        // Select all elements that should animate when scrolled into view
-        const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
-
-        // Options for the Intersection Observer
-        const observerOptions = {
-            root: null, // Observes relative to the viewport
-            rootMargin: '0px', // No extra margin around the root
-            threshold: 0.1 // Triggers when 10% of the target element is visible
-        };
-
-        // Callback function executed when observed elements enter or exit the viewport
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // If the element is visible, add the 'is-visible' class
-                    entry.target.classList.add('is-visible');
-                    // Stop observing the element to ensure the animation plays only once
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        // Create a new Intersection Observer instance
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        // Observe each element that needs scroll-reveal animation
-        animateOnScrollElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // Trigger hero section animations immediately on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Select hero elements
-            const partnerImgs = document.querySelectorAll('.hero-partner-img');
-            const heroTitle = document.querySelector('.hero-title-animated');
-            const heroSubtitle = document.querySelector('.hero-subtitle-animated');
-            const heroButton = document.querySelector('.hero-button-animated');
-
-            // Set initial opacity to 0 to ensure animation plays from hidden state
-            partnerImgs.forEach(img => img.style.opacity = '0');
-            heroTitle.style.opacity = '0';
-            heroSubtitle.style.opacity = '0';
-            heroButton.style.opacity = '0';
-
-            // By setting animation-play-state to 'running', we initiate the animations
-            partnerImgs.forEach(img => img.style.animationPlayState = 'running');
-            heroTitle.style.animationPlayState = 'running';
-            heroSubtitle.style.animationPlayState = 'running';
-            heroButton.style.animationPlayState = 'running';
-        });
-
-    </script>
-</body>
-</html>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gold-text">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto">
+                <form class="space-y-6 animate-slide-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6
