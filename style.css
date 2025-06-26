@@ -220,3 +220,10 @@ footer .container .d-flex a i:hover {
     /* Adjust as needed */
     margin-right: 10px;
 }
+
+@media(max-width:1100px)
+{
+    #projects {
+    padding: 100px 50px;
+}
+}
