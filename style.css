@@ -24,6 +24,11 @@ body {
     justify-self: center;
 }
 
+.navbar .navbar-toggler .navbar-toggler-icon{
+    border: none;
+    box-shadow: none;
+}
+
 h1,
 h2,
 h3,
@@ -221,16 +226,14 @@ footer .container .d-flex a i:hover {
     margin-right: 10px;
 }
 
-@media(max-width:1100px)
-{
+@media(max-width:1100px) {
     #projects {
-    padding: 100px 50px;
-}
+        padding: 100px 50px;
+    }
 }
 
-@media(max-width:500px)
-{
+@media(max-width:500px) {
     #projects {
-    padding: 100px 25px;
-}
+        padding: 100px 25px;
+    }
 }
