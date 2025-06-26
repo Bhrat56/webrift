@@ -125,9 +125,9 @@ h4 {
 @media (max-width: 768px) {
     .project-overlay {
         /* On small screens, always show the overlay */
-        bottom: 0;
+        /* bottom: 0; */
         /* Remove hover effect for small screens */
-        transition: none;
+        /* transition: none; */
     }
 
     .project-card:hover .project-overlay {
