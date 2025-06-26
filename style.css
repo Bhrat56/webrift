@@ -101,42 +101,6 @@ h4 {
     /* Equivalent to rounded-lg */
 }
 
-/* Existing CSS for .project-overlay */
-.project-overlay {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    background: rgba(15, 23, 42, 0.9);
-    transition: all 0.4s ease;
-    padding: 20px;
-}
-
-.project-card:hover .project-overlay {
-    bottom: 0;
-}
-
-/* Add this media query */
-@media (max-width: 768px) {
-    .project-overlay {
-        /* On small screens, always show the overlay */
-        bottom: 0;
-        /* Remove hover effect for small screens */
-        transition: none;
-    }
-
-    .project-card:hover .project-overlay {
-        /* Override hover effect on small screens */
-        bottom: 0;
-    }
-}
-
-
-.project-overlay .visit-btn {
-    background-color: var(--accent-gold);
-    margin-top: 10px;
-}
-
 .contact-input {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
