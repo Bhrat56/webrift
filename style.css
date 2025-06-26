@@ -203,10 +203,10 @@ footer .container .d-flex a i:hover {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0;
 }
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
     background: var(--primary-dark);
 }
 
@@ -217,7 +217,7 @@ footer .container .d-flex a i:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-gold);
-}
+} */
 
 /* Navbar adjustments for logo */
 .navbar-brand img {
