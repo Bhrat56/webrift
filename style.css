@@ -132,7 +132,7 @@ h4 {
 
     .project-card:hover .project-overlay {
         /* Override hover effect on small screens */
-        bottom: 0;
+        /* bottom: 0; */
     }
 }
 
