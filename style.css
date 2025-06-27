@@ -97,19 +97,24 @@ h4 {
     position: relative;
     overflow: hidden;
     height: 300px;
-    width: 100%;
     border-radius: 0.75rem;
     /* Equivalent to rounded-lg */
 }
 
 .project-card img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    align-items: center;
     transition: transform 0.3s ease;
+    border-radius: 0.75rem;
+}
+
+.project-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
 }
 
 .project-overlay .visit-btn {
