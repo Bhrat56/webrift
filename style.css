@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 :root {
     --primary-dark: #0f172a;
     --primary-light: #f8fafc;
