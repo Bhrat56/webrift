@@ -1,4 +1,4 @@
 User-agent: *
-allow: /
+disallow: 
 
 Sitemap: https://webrift.netlify.app/sitemap.xml
