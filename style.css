@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair Display:wght@400;500;600;700&display=swap');
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 :root {
     --primary-dark: #0f172a;
     --primary-light: #f8fafc;
@@ -160,6 +164,27 @@ h4 {
     /* Slightly lighter on focus */
 }
 
+.footer-bottom {
+    color: #bbb;
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #000;
+}
+
+#footer-up-icon {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 24px;
+}
+
 footer {
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -185,6 +210,14 @@ footer .container .d-flex a i:hover {
 #team .d-flex a i:hover {
     transform: scale(1.1);
     color: #d4af37;
+}
+
+#faq-section h2 button{
+    color: #f8fafc;
+}
+
+#faq-section .drop-down-faq{
+    color: white;
 }
 
 /* Animations */
@@ -230,24 +263,9 @@ footer .container .d-flex a i:hover {
     animation-delay: 0.5s;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 0;
 }
-
-/* ::-webkit-scrollbar-track {
-    background: var(--primary-dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--accent-purple);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-gold);
-} */
-
 /* Navbar adjustments for logo */
 .navbar-brand img {
     height: 40px;
@@ -264,5 +282,13 @@ footer .container .d-flex a i:hover {
 @media(max-width:500px) {
     #projects {
         padding: 100px 25px;
+    }
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        top:0;
+    width: 100%;
+    justify-self:normal;
     }
 }
