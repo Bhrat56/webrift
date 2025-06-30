@@ -1,12 +1,17 @@
+/* ========== main and root content ========== */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair Display:wght@400;500;600;700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 :root {
     --primary-dark: #0f172a;
     --primary-light: #f8fafc;
@@ -18,6 +23,42 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--primary-dark);
     color: var(--primary-light);
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.gold-text {
+    color: var(--accent-gold);
+}
+
+.purpule-text {
+    color: var(--accent-purple);
+}
+
+.section {
+    padding: 100px 0;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+/* ======== navbar and footer design =========== */
+header {
     overflow-x: hidden;
 }
 
@@ -36,135 +77,20 @@ body {
     box-shadow: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Playfair Display', serif;
+.navbar-nav .nav-item .nav-link {
+    color: var(--primary-light);
+    transition: color 0.3s ease;
 }
 
-.gold-text {
+.navbar-nav .nav-item .nav-link:hover {
     color: var(--accent-gold);
 }
 
-.purple-text {
-    color: var(--accent-purple);
-}
-
-.bg-gradient-dark {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-}
-
-.hero-section {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-overlay {
-    background: rgba(15, 23, 42, 0.85);
-    position: absolute;
-    inset: 0;
-}
-
-.section {
-    padding: 100px 0;
-}
-
-.card-custom {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    border-radius: 0.75rem;
-    /* Equivalent to rounded-lg */
-}
-
-.card-custom:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: var(--accent-gold);
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--accent-gold);
-    margin-bottom: 20px;
-}
-
-#projects {
-    padding: 100px 200px;
-}
-
-.project-card {
-    position: relative;
-    overflow: hidden;
-    height: 300px;
-    border-radius: 0.75rem;
-    /* Equivalent to rounded-lg */
-}
-
-.project-card img {
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    transition: transform 0.3s ease;
-    border-radius: 0.75rem;
-}
-
-.project-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    
-}
-
-.project-overlay .visit-btn {
-    background-color: var(--accent-gold);
-    margin-top: 10px;
-}
-
-/* Existing CSS for .project-overlay */
-.project-overlay {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    background: rgba(15, 23, 42, 0.9);
-    transition: all 0.4s ease;
-    padding: 20px;
-}
-
-.project-card:hover .project-overlay {
-    bottom: 0;
-}
-
-
-.contact-input {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    transition: all 0.3s;
-    border-radius: 0.5rem;
-    /* Equivalent to rounded-lg */
-    padding: 0.75rem 1rem;
-    /* Equivalent to p-3 */
-}
-
-.contact-input::placeholder {
-    color: #f8fafc;
-}
-
-.contact-input:focus {
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-    background-color: rgba(255, 255, 255, 0.15);
-    /* Slightly lighter on focus */
+/* Navbar adjustments for logo */
+.navbar-brand img {
+    height: 40px;
+    /* Adjust as needed */
+    margin-right: 10px;
 }
 
 .footer-bottom {
@@ -205,25 +131,148 @@ footer .container .d-flex a i:hover {
     color: #d4af37;
 }
 
-#team .d-flex a i {
+/* ============ home page design ================== */
+
+/* hero-section home page*/
+
+#home-main .hero-section {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-main .hero-overlay {
+    background: rgba(15, 23, 42, 0.85);
+    position: absolute;
+    inset: 0;
+}
+
+/* service section home page */
+#home-main .card-custom {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+    /* Equivalent to rounded-lg */
+}
+
+#home-main .card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-gold);
+}
+
+#home-main .service-icon {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+/* project section from home page */
+
+#home-main #projects {
+    padding: 100px 200px;
+}
+
+#home-main .project-card {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    border-radius: 0.75rem;
+    /* Equivalent to rounded-lg */
+}
+
+#home-main .project-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+#home-main .project-card img {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    transition: transform 0.3s ease;
+    border-radius: 0.75rem;
+}
+
+#home-main .project-overlay .visit-btn {
+    background-color: var(--accent-gold);
+    margin-top: 10px;
+}
+
+/* Existing CSS for .project-overlay */
+#home-main .project-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+#home-main .project-card:hover .project-overlay {
+    bottom: 0;
+}
+
+@media(max-width:1100px) {
+    #home-main #projects {
+        padding: 100px 50px;
+    }
+}
+
+@media(max-width:500px) {
+    #home-main #projects {
+        padding: 100px 25px;
+    }
+}
+
+/* team section from home page */
+
+#home-main #team .d-flex a i {
     transition: trasnform 0.3s ease;
     transition: color 0.3s ease;
 }
 
-#team .d-flex a i:hover {
+#home-main #team .d-flex a i:hover {
     transform: scale(1.1);
     color: #d4af37;
 }
 
-#faq-section h2 button{
+
+/* contact section from home page */
+#home-main .contact-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s;
+    border-radius: 0.5rem;
+    /* Equivalent to rounded-lg */
+    padding: 0.75rem 1rem;
+    /* Equivalent to p-3 */
+}
+
+#home-main .contact-input::placeholder {
     color: #f8fafc;
 }
 
-#faq-section .drop-down-faq{
-    color: white;
+#home-main .contact-input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Slightly lighter on focus */
 }
 
-/* Animations */
+/*========== Animations  =========*/
+
 .animate-fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -266,33 +315,38 @@ footer .container .d-flex a i:hover {
     animation-delay: 0.5s;
 }
 
-*::-webkit-scrollbar {
-    width: 0;
-}
-/* Navbar adjustments for logo */
-.navbar-brand img {
-    height: 40px;
-    /* Adjust as needed */
-    margin-right: 10px;
+/* ============== about page content =========== */
+
+#about-main .mb-5 h1 {
+    color: var(--accent-gold);
+    font-size: 60px;
 }
 
-@media(max-width:1100px) {
-    #projects {
-        padding: 100px 50px;
-    }
+#about-main .mb-5 p {
+    color: var(--accent-light);
+    font-size: 20px;
 }
 
-@media(max-width:500px) {
-    #projects {
-        padding: 100px 25px;
-    }
+#about-main {
+    padding: 100px 7%;
 }
 
-@media(max-width: 768px) {
-    .navbar {
-        top:0;
-    width: 100%;
-    justify-self:normal;
-    }
+.about-page .mb-4 .fw-semibold {
+    margin-bottom: 30px;
+    color: var(--accent-gold);
+    font-size: 37px;
 }
 
+#about-main .mb-4 a {
+    color: var(--accent-gold);
+}
+
+#about-main .mb-4 i {
+    color: var(--accent-gold);
+}
+
+
+#sub-subheading h3 {
+    font-size: 22px;
+    color: #6d28d9;
+}
