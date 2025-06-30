@@ -131,6 +131,10 @@ footer .container .d-flex a i:hover {
     color: #d4af37;
 }
 
+footer .list-unstyled:hover{
+    color: var(--accent-gold);
+}
+
 /* ============ home page design ================== */
 
 /* hero-section home page*/
