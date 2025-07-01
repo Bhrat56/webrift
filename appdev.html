@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webrift - SEO (Search Engine Optimization) Services in Ambala</title>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+:root {
+            --primary-dark: #0f172a;
+            --primary-light: #f8fafc;
+            --accent-gold: #d4af37;
+            --accent-purple: #6d28d9;
+
+            /* Mapped variables for easier use */
+            --main-bg: var(--primary-dark);
+            --text-color: var(--primary-light);
+            --highlight-color1: var(--accent-purple);
+            --highlight-color2: var(--accent-gold);
+            --card-bg-color: #18243b;
+            /* Slightly lighter than primary-dark for card contrast */
+            --section-even-bg: #162035;
+            /* Slightly lighter than primary-dark for section contrast */
+            --border-color: #3f3112;
+            /* Darker accent gold for borders */
+            --footer-bg: #0a101f;
+            /* Even darker than primary-dark for footer */
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* --- Global Styles --- */
+        #cmis-main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        #cmis-main h1,
+        #cmis-main h2,
+        #cmis-main h3,
+        #cmis-main h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--highlight-color1);
+            text-align: center;
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+
+        #cmis-main h1 {
+            font-size: 3em;
+        }
+
+        #cmis-main h2 {
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+        }
+
+        #cmis-main h3 {
+            font-size: 1.8em;
+            color: var(--text-color);
+        }
+
+        #cmis-main p {
+            font-size: 1.1em;
+            margin-bottom: 1em;
+        }
+
+        #cmis-main .btn {
+            display: inline-block;
+            background: var(--accent-purple);
+            color: var(--primary-light);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        #cmis-main .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+            background: var(--accent-gold);
+        }
+
+        #cmis-main section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #cmis-main section:nth-child(even) {
+            background-color: var(--section-even-bg);
+        }
+
+        /* --- Header/Hero Section --- */
+        #cmis-main .hero {
+            background: url('https://via.placeholder.com/1920x700/0f172a/6d28d9?text=CMIS+SMIS+Solutions') no-repeat center center/cover;
+            color: var(--primary-light);
+            padding: 120px 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #cmis-main .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* Overlay for readability */
+            z-index: 1;
+        }
+
+        #cmis-main .hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        #cmis-main .hero h1 {
+            font-size: 3.8em;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+            /* Override for hero */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #cmis-main .hero p.subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #d0d0d0;
+            min-height: 2em;
+            /* Ensure space for typewriter effect */
+        }
+
+        /* --- Typewriter Effect --- */
+        #cmis-main .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            /* Ensures text is hidden until typed */
+            border-right: .15em solid var(--highlight-color2);
+            /* The blinking cursor */
+            white-space: nowrap;
+            /* Keeps text on one line */
+            animation: typing 3s steps(30, end) forwards, blink-caret .75s step-end infinite;
+            width: 0;
+            /* Starts with no width */
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--highlight-color2);
+            }
+        }
+
+            /* --- What is CMIS/SMIS Section --- */
+        #cmis-main .what-is-services p {
+            max-width: 900px;
+            margin: 0 auto 2em auto;
+            text-align: justify;
+            color: var(--text-color);
+        }
+
+        #cmis-main .what-is-services .icon-feature {
+            font-size: 5em;
+            color: var(--highlight-color2);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        #cmis-main .what-is-services h2 {
+            color: var(--highlight-color2);
+        }
+        /* --- Benefits Section --- */
+        #cmis-main #benefits h2 {
+            color: var(--accent-gold);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        #cmis-main .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        #cmis-main .benefit-card {
+            background-color: var(--card-bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cmis-main .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--accent-gold);
+        }
+
+        #cmis-main .benefit-card .icon {
+            font-size: 3em;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        #cmis-main .benefit-card:hover .icon {
+            transform: scale(1.1);
+            /* Image pop-up effect on hover */
+        }
+
+        #cmis-main .benefit-card h3 {
+            color: var(--accent-purple);
+            margin-bottom: 10px;
+        }
+
+        #cmis-main .benefit-card p {
+            font-size: 0.95em;
+            color: var(--text-color);
+            text-align: center;
+            /* Adjusted for new text-light */
+        }
+
+        /* --- Process Section --- */
+
+        #cmis-main #process h2 {
+            color: var(--highlight-color2);
+        }
+
+        #cmis-main .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        #cmis-main .process-step {
+            flex-basis: calc(33% - 40px);
+            /* 3 items per row */
+            background-color: var(--primary-dark);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #cmis-main .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--accent-gold);
+        }
+
+        #cmis-main .process-step .step-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--highlight-color2);
+            margin-bottom: 10px;
+        }
+
+        #cmis-main .process-step h3 {
+            color: var(--highlight-color1);
+            margin-bottom: 10px;
+        }
+
+        #cmis-main .process-step p {
+            font-size: 0.9em;
+            color: var(--text-color);
+            /* text-align: center; */
+            /* Adjusted for new text-light */
+        }
+
+        /* --- Why Choose Us --- */
+        #cmis-main #why-webrift h2 {
+            color: var(--highlight-color2);
+        }
+
+        #cmis-main #why-webrift p {
+            text-align: center;
+        }
+
+        #cmis-main #why-webrift .usp-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #cmis-main #why-webrift .usp-list li {
+            background-color: var(--card-bg-color);
+            padding: 20px 30px;
+            border-radius: 10px;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-basis: calc(48% - 20px);
+            /* Two columns */
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        #cmis-main #why-webrift .usp-list li i {
+            font-size: 1.8em;
+            color: var(--highlight-color2);
+        }
+
+        #cmis-main #why-webrift .usp-list li span {
+            font-weight: 600;
+            color: var(--highlight-color1);
+        }
+
+        #cmis-main #why-webrift p {
+            max-width: 800px;
+            margin: 0 auto 2em auto;
+            text-align: justify;
+        }
+
+        /* --- CTA Section --- */
+        #cmis-main .cta {
+            background: var(--main-bg);
+            color: var(--primary-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        #cmis-main .cta h2 {
+            color: var(--highlight-color2);
+            margin-bottom: 20px;
+        }
+
+        #cmis-main .cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            #cmis-main .hero h1 {
+                font-size: 3em;
+            }
+
+            #cmis-main .hero p.subtitle {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            #cmis-main .process-step {
+                flex-basis: calc(48% - 40px);
+                /* 2 items per row */
+            }
+
+            #cmis-main #why-webrift .usp-list li {
+                flex-basis: 100%;
+                /* One column */
+            }
+        }
+
+        @media (max-width: 768px) {
+            #cmis-main .hero {
+                padding: 80px 0;
+            }
+
+            #cmis-main .hero h1 {
+                font-size: 2.5em;
+            }
+
+            #cmis-main .hero p.subtitle {
+                font-size: 1.2em;
+            }
+
+            #cmis-main section {
+                padding: 60px 0;
+            }
+
+            #cmis-main .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #cmis-main .process-step {
+                flex-basis: 100%;
+                /* 1 item per row */
+            }
+
+            #cmis-main .what-is-cmis-smis p,
+            #why-webrift p {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #cmis-main h1 {
+                font-size: 2.2em;
+            }
+
+            #cmis-main h2 {
+                font-size: 1.8em;
+            }
+
+            #cmis-main p {
+                font-size: 1em;
+            }
+
+            #cmis-main .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            #why-webrift .usp-list li {
+                flex-basis: 100%;
+                flex-direction: column;
+                /* Full width for small screens */
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html#home" alt="web design company in india">
+          <img src="images/logo.png" alt="web designer near me" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="cmis-main">
+    <!-- Header/Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Innovate on the Go</h1>
+            <p class="subtitle">
+                <span id="typewriter-text" class="typewriter-text"></span>
+            </p>
+            <a href="#contact" class="btn">Launch Your Mobile App</a>
+        </div>
+    </section>
+
+    <!-- What is Mobile App Development? -->
+    <section id="what-is" class="what-is-services">
+        <div class="container">
+            <i class="fas fa-mobile-alt icon-feature"></i>
+            <h2>What is <strong>Mobile App Development</strong>?</h2>
+            <p><strong>Mobile App Development</strong> is the process of creating software applications that run on mobile devices, such as smartphones and tablets. These applications can be native (built specifically for iOS or Android) or cross-platform (designed to work on multiple operating systems). As premier <strong>mobile app developers in Ambala</strong>, Webrift offers end-to-end services to transform your ideas into powerful, user-friendly mobile solutions.</p>
+            <p>In today's mobile-first world, having a dedicated app allows your business to connect directly with customers, offer personalized experiences, and streamline operations. Whether you're in <strong>Ambala Cantt</strong>, <strong>Ambala City</strong>, or anywhere in <strong>Haryana</strong>, a well-developed mobile app can significantly enhance your reach, engagement, and competitive edge, making your business accessible literally "<strong>near me</strong>" to your target audience.</p>
+        </div>
+    </section>
+
+    <!-- How It Helps Businesses (Benefits) -->
+    <section id="benefits">
+        <div class="container">
+            <h2>How Mobile App Development Benefits Your Business</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-users icon"></i>
+                    <h3>Enhanced Customer Engagement</h3>
+                    <p>Provide a direct, personalized channel for interaction, fostering loyalty and repeat business. Perfect for businesses in <strong>Ambala</strong> wanting to connect deeper.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-pie icon"></i>
+                    <h3>Increased Brand Visibility</h3>
+                    <p>A presence on app stores and a constant icon on users' home screens boosts brand recognition and recall.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-cogs icon"></i>
+                    <h3>Streamlined Operations</h3>
+                    <p>Automate internal processes, improve team collaboration, and enhance efficiency with custom enterprise mobile apps. We are experts in <strong>developing mobile apps</strong> for operational excellence.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-dollar-sign icon"></i>
+                    <h3>New Revenue Streams</h3>
+                    <p>Monetize through in-app purchases, subscriptions, or premium features, opening up new business models.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-map-marked-alt icon"></i>
+                    <h3>Geo-Targeting & Personalization</h3>
+                    <p>Leverage location-based services to offer relevant content, promotions, and services to users in <strong>Ambala</strong> and surrounding areas.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-cloud icon"></i>
+                    <h3>Data Collection & Insights</h3>
+                    <p>Gather valuable user data to understand behavior, preferences, and improve your services and marketing strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mobile App Development Process -->
+    <section id="process">
+        <div class="container">
+            <h2>Our Comprehensive Mobile App Development Process</h2>
+            <p style="max-width: 800px; margin: 0 auto 50px auto; color: #c0c0c0;">Webrift follows a structured, agile methodology to deliver high-quality, impactful mobile applications.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Strategy</h3>
+                    <p>Defining app goals, target audience, features, and technology stack (e.g., Flutter) for your app in <strong>Ambala</strong>.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive <strong>app interface design</strong> and captivating visuals for a seamless user experience. Focus on <strong>app UI design</strong>.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Our expert <strong>mobile app developers in Ambala</strong> write clean, efficient code for iOS, Android, or cross-platform solutions.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing to ensure your app is bug-free, performs optimally, and provides a smooth user experience.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Deployment & Launch</h3>
+                    <p>Assisting with app store submission (Google Play, Apple App Store) and ensuring a successful launch.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Maintenance & Support</h3>
+                    <p>Ongoing updates, performance monitoring, and technical support to keep your app relevant and functional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Webrift for Mobile App Development? -->
+    <section id="why-webrift">
+        <div class="container">
+            <h2>Why Webrift is Your Go-To for Mobile Apps in <strong>Ambala</strong></h2>
+            <p>Choosing the right partner for your "<strong>apps in development</strong>" is crucial. Webrift combines technical expertise with a deep understanding of your business needs.</p>
+            <ul class="usp-list">
+                <li><i class="fas fa-crosshairs"></i> <span>Strategic Approach:</span> We align app development with your business objectives to ensure maximum impact and ROI.</li>
+                <li><i class="fas fa-code"></i> <span>Expert Developers:</span> Our team consists of highly skilled mobile app developers in Ambala proficient in various platforms and technologies.</li>
+                <li><i class="fas fa-hand-holding-heart"></i> <span>User-Centric Design:</span> We prioritize intuitive UI/UX to create apps that users love and find easy to navigate.</li>
+                <li><i class="fas fa-rocket"></i> <span>Scalable & Secure Solutions:</span> Building robust apps that can handle growth and protect user data with top-tier security.</li>
+                <li><i class="fas fa-map-pin"></i> <span>Local Market Insight:</span> Deep understanding of the Ambala and Haryana markets to tailor apps for local success.</li>
+                <li><i class="fas fa-headset"></i> <span>Comprehensive Support:</span> From concept to post-launch, we provide continuous support and maintenance for your mobile application.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2>Ready to Bring Your Mobile App Idea to Life?</h2>
+            <p>If you're searching for "<strong>mobile app developers near me</strong>" in <strong>Ambala</strong> or "<strong>software development services Ambala</strong>" for mobile solutions, contact Webrift today. Let's build the next great app together!</p>
+            <a href="mailto:info@webrift.com" class="btn">Get a Free App Consultation!</a>
+        </div>
+    </section>
+
+</main>
+    <footer class="py-5 bg-gradient-dark position-relative">
+        <div class="container text-secondary">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold gold-text mb-3">Subscribe to Newsletter</h5>
+                    <p class="small opacity-75">Stay updated with our latest news and offers.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control contact-input me-2" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-sm rounded-pill text-white"
+                            style="background-color: var(--accent-purple);">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-bold gold-text mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home">Home</a></li>
+                        <li class="mb-2"><a href="#about">About Us</a></li>
+                        <li class="mb-2"><a href="#services">Services</a>
+                        </li>
+                        <li class="mb-2"><a href="#projects">Projects</a>
+                        </li>
+                        <li class="mb-2"><a href="#team">Team</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="fw-bold gold-text mb-3">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#services">Custom Web
+                                Development</a></li>
+                        <li class="mb-2"><a href="#services">SEO Services</a></li>
+                        <li class="mb-2"><a href="#services">Web Design & Development</a></li>
+                        <li class="mb-2"><a href="#">Mobile App Development</a></li>
+                        <li class="mb-2"><a href="#">ERP Model</a></li>
+                        <li class="mb-2"><a href="#">UI/UX Design</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-bold gold-text mb-3">Contact US</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2" style="color: #f8f8f8;">&#11044 Mobile/Whatsapp: <i
+                                class="fa-solid fa-hand-pointer"></i> <br> <a href="tel:+917404471942">+91
+                                7404471942,</a><br><a href="tel:+91 7626032325">+91
+                                7626032325,</a><br><a href="tel:+91 7973644984">+91 79736 44984</a></li>
+                        <li class="mb-2" style="color: #f8f8f8;">&#11044 Email: <i class="fa-solid fa-hand-pointer"></i>
+                            <br> <a href="mailto:webrift.suuport@gmail.com">webrift.support@gmail.com,</a><br><a
+                                href="mailto:bgambhir9@gmail.com">bgambhir9@gmail.com,</a>
+                            <a href="mailto:gargchirag2020@gmail.com">gargchirag2020@gmail.com,</a>
+                            <a href="mailto:Kritikakandhari1902@gmail.com ">Kritikakandhari1902@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <hr class="my-4 border-secondary opacity-25">
+            <div class="footer-bottom">
+                <div id="copyright-content">
+                    &copy; 2025 All Rights Reserved By Webrift.
+                </div>
+                <div id="footer-up-icon">
+                    <a href='#home'><i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        // Typewriter Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const textElement = document.getElementById('typewriter-text');
+            const phrases = [
+                "Transforming Ideas into Powerful Mobile Apps in Ambala.",
+                "Connecting Your Business with Customers on the Go.",
+                "Native & Cross-Platform Solutions. Ambala's App Experts.",
+                "Your Vision, Our Mobile Innovation."
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100; // milliseconds
+            let deletingSpeed = 50; // milliseconds
+            let pauseEnd = 1500; // milliseconds to pause at end of typing
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+                if (isDeleting) {
+                    textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let currentTypingSpeed = typingSpeed;
+                if (isDeleting) {
+                    currentTypingSpeed = deletingSpeed;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    currentTypingSpeed = pauseEnd;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    currentTypingSpeed = 500; // Pause before typing next phrase
+                }
+
+                setTimeout(type, currentTypingSpeed);
+            }
+
+            // Start the typewriter effect
+            type();
+        });
+    </script>
+
+</body>
+</html>
