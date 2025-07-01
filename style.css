@@ -363,3 +363,50 @@ footer .row .list-unstyled li a:hover{
 
 /* ============== services page content =========== */
 
+ #service-main .service-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+ #service-main .hero { text-align: center; margin-bottom: 2rem; }
+ #service-main .hero-img { max-width: 100%; border-radius: 20px; box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
+  #service-main.service-title { font-size: 2.5rem; color: #f4c542; margin-top: 1rem; }
+  #service-main.service-description p { font-size: 1.125rem; color: #dddddd; margin-top: 1.5rem; }
+ #service-main .related-projects { margin-top: 3rem; }
+ #service-main .related-projects h2 { font-size: 2rem; color: #f4c542; margin-bottom: 1.5rem; }
+ #service-main .project-card {
+  display: flex;
+  background-color: #182033;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+ #service-main .project-card img {
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+ #service-main .project-info { flex: 1; }
+ #service-main .project-info h3 { margin-top: 0; color: #ffffff; }
+ #service-main .project-info p { margin: 0.25rem 0; color: #bbbbbb; }
+ #service-main .visit-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 8px 14px;
+  background-color: #f4c542;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.visit-btn:hover { background-color: #ffe066; color: #000; }
+@media (max-width: 768px) {
+   #service-main.project-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #service-main .project-card img { margin-right: 0; margin-bottom: 1rem; }
+}
