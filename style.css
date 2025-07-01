@@ -385,9 +385,9 @@ footer .row .list-unstyled li a:hover {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
-#service-main.service-title {
+#service-main .service-title {
     font-size: 2.5rem;
-    color: #f4c542;
+    color:var(--accent-gold);
     margin-top: 1rem;
 }
 
