@@ -88,7 +88,7 @@ header {
 
 /* Navbar adjustments for logo */
 .navbar-brand img {
-    height: 40px;
+    height: 60px;
     /* Adjust as needed */
     margin-right: 10px;
 }
@@ -131,9 +131,15 @@ footer .container .d-flex a i:hover {
     color: #d4af37;
 }
 
-footer .list-unstyled:hover{
+footer .row .list-unstyled li a{
+    color: rgba(108, 117, 125, 1) ;
+}
+
+footer .row .list-unstyled li a:hover{
     color: var(--accent-gold);
 }
+
+
 
 /* ============ home page design ================== */
 
@@ -354,3 +360,6 @@ footer .list-unstyled:hover{
     font-size: 22px;
     color: #6d28d9;
 }
+
+/* ============== services page content =========== */
+

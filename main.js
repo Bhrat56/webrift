@@ -62,3 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCount();
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const serviceId = urlParams.get('id');
+
+  fetch('services.json')
+    .then(res => res.json())
+    .then(data => {
+      const service = data.find(s => s.id === serviceId);
+      if (service) {
+        document.getElementById('service-title').innerText = service.title;
+        document.getElementById('service-description').innerText = service.description;
+        document.getElementById('service-image').src = service.image;
+
+        const keywordsList = document.getElementById('service-keywords');
+        service.keywords.forEach(keyword => {
+          const li = document.createElement('li');
+          li.textContent = `• ${keyword}`;
+          keywordsList.appendChild(li);
+        });
+      } else {
+        document.getElementById('service-details').innerHTML = '<h2>Service not found.</h2>';
+      }
+    });
+});
