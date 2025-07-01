@@ -362,11 +362,12 @@ footer .row .list-unstyled li a:hover{
 }
 
 /* ============== services page content =========== */
-
- #service-main .service-page {
+#service-main{
+    padding: 100px 10%;
+}
+  .service-page {
   max-width: 100%;
   margin: auto;
-  padding: 100px 10%;
 }
  #service-main .hero { text-align: center; margin-bottom: 2rem; }
  #service-main .hero-img { max-width: 100%; border-radius: 20px; box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
