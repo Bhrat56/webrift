@@ -1,0 +1,26 @@
+{
+  "custom-web-dev": {
+    "title": "Custom Web Development",
+    "file": "services/custom-web-dev.html"
+  },
+  "web-design-dev": {
+    "title": "Web Design and Development",
+    "file": "services/web-design-dev.html"
+  },
+  "seo-services": {
+    "title": "SEO (Search Engine Optimization)",
+    "file": "services/seo-services.html"
+  },
+  "mobile-app-dev": {
+    "title": "Mobile App Development",
+    "file": "services/mobile-app-dev.html"
+  },
+  "erp-model": {
+    "title": "ERP Model Development",
+    "file": "services/erp-model.html"
+  },
+  "ui-ux-design": {
+    "title": "UI/UX Design",
+    "file": "services/ui-ux-design.html"
+  }
+}

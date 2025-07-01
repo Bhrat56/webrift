@@ -40,29 +40,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// abot page counter
-AOS.init();
-
-document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".counter");
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.innerText.replace('+', '');
-            const count = +counter.getAttribute('data-count') || 0;
-            const speed = 50;
-            const inc = Math.ceil(target / speed);
-            if (count < target) {
-                counter.innerText = count + inc + "+";
-                counter.setAttribute('data-count', count + inc);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target + "+";
-            }
-        };
-        updateCount();
-    });
-});
-
+// REMOVE this whole block
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const serviceId = urlParams.get('id');
