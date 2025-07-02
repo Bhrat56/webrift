@@ -66,3 +66,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwVMZCtKvcDdkCEMWe0uK6tbnLbVN3WEGDPd0h1Z1JPG-resxCFrErH_Y_yZWJWbzxk/exec'; // Replace with your script's URL
+
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors', // <== Add this line to suppress CORS blocking
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(() => alert('Message sent successfully!'))
+    .catch(error => alert('Error occurred: ' + error));
+  });
