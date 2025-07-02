@@ -327,38 +327,400 @@ footer .row .list-unstyled li a:hover {
 
 /* ============== about page content =========== */
 
-#about-main .mb-5 h1 {
-    color: var(--accent-gold);
-    font-size: 60px;
+:root {
+
+    /* Mapped variables for easier use */
+    --main-bg: var(--primary-dark);
+    --text-color: var(--primary-light);
+    --highlight-color1: var(--accent-purple);
+    --highlight-color2: var(--accent-gold);
+    --card-bg-color: #18243b;
+    /* Slightly lighter than primary-dark for card contrast */
+    --section-even-bg: #162035;
+    /* Slightly lighter than primary-dark for section contrast */
+    --border-color: #3f3112;
+    /* Darker accent gold for borders */
+    --footer-bg: #0a101f;
+    /* Even darker than primary-dark for footer */
 }
 
-#about-main .mb-5 p {
-    color: var(--accent-light);
-    font-size: 20px;
+/* --- Global Styles --- */
+#about-main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-#about-main {
-    padding: 100px 7%;
+#about-main h1,
+#about-main h2,
+#about-main h3,
+#about-main h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--highlight-color1);
+    text-align: center;
+    margin-bottom: 0.8em;
+    font-weight: 700;
 }
 
-.about-page .mb-4 .fw-semibold {
+#about-main h1 {
+    font-size: 3em;
+}
+
+#about-main h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+#about-main h3 {
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+
+#about-main p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+#about-main .btn {
+    display: inline-block;
+    background: var(--highlight-color1);
+    color: var(--primary-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+#about-main .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+    background: var(--accent-gold);
+}
+
+#about-main section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+#about-main section:nth-child(even) {
+    background-color: var(--section-even-bg);
+}
+
+/* --- Header/Hero Section --- */
+#about-main .hero {
+    background: url('https://via.placeholder.com/1920x700/0f172a/6d28d9?text=About+Webrift') no-repeat center center/cover;
+    color: var(--primary-light);
+    padding: 120px 0;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#about-main .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Overlay for readability */
+    z-index: 1;
+}
+
+#about-main .hero .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#about-main .hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: var(--primary-light);
+    /* Override for hero */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#about-main .hero p.subtitle {
+    font-size: 1.8em;
     margin-bottom: 30px;
-    color: var(--accent-gold);
-    font-size: 37px;
+    color: #d0d0d0;
+    min-height: 2em;
+    /* Ensure space for typewriter effect */
 }
 
-#about-main .mb-4 a {
+/* --- Typewriter Effect --- */
+#about-main .typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    /* Ensures text is hidden until typed */
+    border-right: .15em solid var(--highlight-color2);
+    /* The blinking cursor */
+    white-space: nowrap;
+    /* Keeps text on one line */
+    animation: typing 3s steps(30, end) forwards, blink-caret .75s step-end infinite;
+    width: 0;
+    /* Starts with no width */
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--highlight-color2);
+    }
+}
+
+/* --- About Content Section --- */
+#about-main .about-content p {
+    max-width: 900px;
+    margin: 0 auto 2em auto;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+#about-main .about-content .icon-feature {
+    font-size: 5em;
+    color: var(--highlight-color2);
+    margin-bottom: 20px;
+    display: block;
+}
+
+#about-main .about-content h2.fw-semibold {
+    /* Specific style for provided h2 */
+    text-align: left;
+    color: var(--highlight-color1);
+    font-size: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#about-main .about-content h3.mb-3 {
+    /* Specific style for provided h3 */
+    text-align: left;
+    color: var(--highlight-color2);
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#about-main .about-content .mb-4 {
+    margin-bottom: 2.5em;
+    /* Spacing between content blocks */
+}
+
+#about-main .about-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 2em auto;
+}
+
+#about-main .about-content ul li {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+#about-main .about-content ul li::before {
+    content: '\2713';
+    /* Checkmark icon */
+    color: var(--highlight-color2);
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+}
+
+
+/* --- FAQ Section --- */
+#about-main .faq-section {
+    background-color: var(--card-bg-color);
+    padding: 80px 0;
+}
+
+#about-main .faq-section h2 {
     color: var(--accent-gold);
 }
 
-#about-main .mb-4 i {
-    color: var(--accent-gold);
+#about-main .faq-item {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#about-main .faq-question {
+    padding: 20px 25px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--highlight-color1);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#about-main .faq-question:hover {
+    background-color: #202e48;
+    /* Slightly lighter hover */
+}
+
+#about-main .faq-question i {
+    transition: transform 0.3s ease;
+}
+
+#about-main .faq-question.active i {
+    transform: rotate(180deg);
+}
+
+#about-main .faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    color: var(--text-color);
+}
+
+#about-main .faq-answer p {
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+#about-main .faq-answer.active {
+    max-height: 500px;
+    /* Adjust based on max content height */
+    padding-top: 15px;
+}
+
+/* --- CTA Section --- */
+#about-main .cta {
+    background: var(--primary-dark);
+    color: var(--primary-light);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#about-main .cta h2 {
+    color: var(--accent-purple);
+    margin-bottom: 20px;
+}
+
+#about-main .cta p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
 
-#sub-subheading h3 {
-    font-size: 22px;
-    color: #6d28d9;
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    #about-main .hero h1 {
+        font-size: 3em;
+    }
+
+    #about-main .hero p.subtitle {
+        font-size: 1.5em;
+    }
+
+    #about-main h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    #about-main.hero {
+        padding: 80px 0;
+    }
+
+    #about-main .hero h1 {
+        font-size: 2.5em;
+    }
+
+    #about-main .hero p.subtitle {
+        font-size: 1.2em;
+    }
+
+    #about-main section {
+        padding: 60px 0;
+    }
+
+    #about-main .about-content p,
+    #about-main .about-content ul,
+    #about-main .faq-answer p {
+        text-align: left;
+    }
+
+    #about-main .about-content h2.fw-semibold,
+    #about-main .about-content h3.mb-3 {
+        font-size: 1.8em;
+    }
+
+    #about-main .faq-question {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-main h1 {
+        font-size: 2.2em;
+    }
+
+    #about-main h2 {
+        font-size: 1.8em;
+    }
+
+    #about-main p {
+        font-size: 1em;
+    }
+
+    #about-main .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    #about-main .about-content h2.fw-semibold,
+    #about-main .about-content h3.mb-3 {
+        font-size: 1.5em;
+    }
+
+    #about-main .faq-question {
+        font-size: 1em;
+        padding: 15px 20px;
+    }
 }
 
 /* ============== services page content =========== */
@@ -387,7 +749,7 @@ footer .row .list-unstyled li a:hover {
 
 #service-main .service-title {
     font-size: 2.5rem;
-    color:var(--accent-gold);
+    color: var(--accent-gold);
     margin-top: 1rem;
 }
 
