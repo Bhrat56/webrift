@@ -728,7 +728,7 @@ footer .row .list-unstyled li a:hover {
 #cmis-main .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 60px 15px;
 }
 
 #cmis-main h1,
@@ -783,7 +783,7 @@ footer .row .list-unstyled li a:hover {
 }
 
 #cmis-main section {
-    padding: 80px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
@@ -795,7 +795,7 @@ footer .row .list-unstyled li a:hover {
 #cmis-main .hero {
     background: url('https://via.placeholder.com/1920x700/0f172a/6d28d9?text=CMIS+SMIS+Solutions') no-repeat center center/cover;
     color: var(--primary-light);
-    padding: 120px 0;
+    padding: 80px 0 80px;
     position: relative;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -842,7 +842,7 @@ footer .row .list-unstyled li a:hover {
     /* Ensures text is hidden until typed */
     border-right: .15em solid var(--highlight-color2);
     /* The blinking cursor */
-    white-space: nowrap;
+    white-space: wrap;
     /* Keeps text on one line */
     animation: typing 3s steps(30, end) forwards, blink-caret .75s step-end infinite;
     width: 0;
