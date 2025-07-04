@@ -348,7 +348,7 @@ footer .row .list-unstyled li a:hover {
 #about-main .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 30px 15px;
 }
 
 #about-main h1,
@@ -462,7 +462,7 @@ footer .row .list-unstyled li a:hover {
     /* Ensures text is hidden until typed */
     border-right: .15em solid var(--highlight-color2);
     /* The blinking cursor */
-    white-space: nowrap;
+    white-space: wrap;
     /* Keeps text on one line */
     animation: typing 3s steps(30, end) forwards, blink-caret .75s step-end infinite;
     width: 0;
